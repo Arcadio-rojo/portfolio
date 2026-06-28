@@ -3,8 +3,8 @@ import { Mail, Briefcase, Send, CheckCircle, Calendar } from "lucide-react";
 import { profile } from "../data/portfolio";
 import useReveal from "../hooks/useReveal";
 
-const WEB3FORMS_KEY = "36b86a5e-d90a-4d0d-b30f-8d2766602037";
-const CALCOM_USERNAME = "arcadio-jr.-flocarencia-pvcj8x/contact-me";
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const CALCOM_USERNAME = import.meta.env.VITE_CALCOM_USERNAME;
 
 function GitHubIcon({ size = 18 }) {
   return (

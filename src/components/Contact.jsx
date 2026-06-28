@@ -3,8 +3,18 @@ import { Mail, Briefcase, Send, CheckCircle, Calendar } from "lucide-react";
 import { profile } from "../data/portfolio";
 import useReveal from "../hooks/useReveal";
 
+// At the top of your component file:
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
-const CALCOM_USERNAME = import.meta.env.VITE_CALCOM_USERNAME;
+
+// Inside your form submission handler function:
+const formData = new FormData(e.target);
+formData.append("access_key", WEB3FORMS_KEY); 
+
+// Example fetch request:
+const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+});
 
 function GitHubIcon({ size = 18 }) {
   return (
